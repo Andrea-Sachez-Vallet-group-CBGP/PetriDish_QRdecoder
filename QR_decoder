@@ -1,0 +1,53 @@
+#!/bin/bash
+##############################
+#### Reading QR codes ########
+##############################
+#Project Fungal inhibition in vitro assays TED Population analyses
+#Pilar Vesga & Rocio Tirado July 2023
+#
+#############################
+#Reading codes generated with qrencode and amended with convert features.
+#Tutorial: https://superuser.com/questions/1584218/rename-batch-directory-files-to-barcode-contained-in-file-image-with-zbar-lin
+#Give permissions to this script to rename files. Do this before running the script.
+#chmod u+x QR_decoder.sh
+#./QR_decoder.sh *.jpg *.png
+#
+#
+#
+#To homogenize the image extension
+for file in RawImages/*.*
+do
+	#Extract the extesion in lower case 
+	extension=$(echo "$file" | awk -F. '{print tolower($NF)}')
+	#Check if all the files are .jpg
+	if [ "$extension" != "jpg" ]
+		then
+			mv "$file" "${file%.*}.JPG"
+			echo "Corrected Extension: $file -> ${file%.*}.JPG"
+		else
+		echo "Correct extension"
+	fi
+done
+#
+#Run a loop for all the images
+for file in RawImages/*.JPG
+do
+  #echo "Ignore error about sockets" #some versions of zbar give an error related to sockets. If that is the case, remove the "#" from this line to reduce noise on output
+  #It will print an error about sockets but it anyway works.
+  #-q does it in quiet mode, we could add --raw removes "QR-code:", --verbose[=0] for removing other noise outputs
+  name="`zbarimg -q --raw $file`"
+  #if the QR code can't be read->
+  if [ -z "$name" ]; then
+    echo "Error QR reading, moving $file to error folder"
+    # Moves the file to a side folder with all the pictures where there was an error in renaming
+    cp $file Errors/
+  else
+    echo "Success in reading $file QR"
+    echo "Renaming $file to $name"
+    cp $file Renamed/$name.jpeg
+  fi
+done 
+#
+#
+#to rename all URL: which is causing errors to the date
+for f in Renamed/*; do mv "$f" $(echo "$f" | sed 's/URL://g'); done
