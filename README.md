@@ -63,9 +63,9 @@ Intructions:
 	* If you used the alternative to DYMO stickers, use the ErrorDetector of that folder and place your Labels.txt 
 * Once the Error detector has finished, it will print a list of missing pictures according to your original file. This can happen if, for instance, one photographed the back and front of a dish with the same sticker or one forgot some samples. 
 
-## License
+## LICENSE
 
 This project is licensed under the CC0-1.0 license
 
-## ACKNOWLEDGEMENTS
+## CITATION
 Vesga P., Tirado R., Akdemir D., De Francesco A., Sanchez-Vallet A. (Under preparation). Evaluation of fungal endophytes isolated from Spanish Durum wheat for biocontrol of the fungal pathogen Zymoseptoria tritici.
