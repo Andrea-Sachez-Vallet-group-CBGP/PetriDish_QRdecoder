@@ -3,15 +3,14 @@
 #### Reading QR codes ########
 ##############################
 #Project Fungal inhibition in vitro assays TED Population analyses
-#Pilar Vesga & Rocio Tirado July 2023
+#Pilar Vesga y Rocio Tirado July 2023
 #
 #############################
 #Reading codes generated with qrencode and amended with convert features.
 #Tutorial: https://superuser.com/questions/1584218/rename-batch-directory-files-to-barcode-contained-in-file-image-with-zbar-lin
 #Give permissions to this script to rename files. Do this before running the script.
-#chmod u+x QR_decoder.sh
-#./QR_decoder.sh *.jpg *.png
-#
+#chmod u+x QRdecoder.sh
+#./QRdecoder.sh *.jpg *.png
 #
 #
 #To homogenize the image extension
