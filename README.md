@@ -47,7 +47,8 @@ IMPORTANT: Stickers have to be focused. Suggested method: Always have the same h
 cd /path to your RootFolder/ 
 sh QR_decoder.sh
 ```
-
+* Some versions of zbar give an error related to sockets. If that is the case, uncomment (remove the #) from line 35 of the QRDecoder Script
+  
 ## CORRECTING ERRORS
 Requires [csv kit](https://csvkit.readthedocs.io/en/latest/) and [xlsx2csv](https://github.com/dilshod/xlsx2csv)
 ```
@@ -59,7 +60,6 @@ Intructions:
 * Check your error pictures if any and rename them by hand. Then, cut them into the renamed folder to check you have all the files and there wasnt any other mistake. 
 * In case, there is no correspondance with the number of pictures, we need to know which ones do you have renamed and which ones might be missing or there were several pics of the same plate, etc. 
 * Run "sh ErrorDetector.sh". IMPORTANT to not change the order of the columns in the Sheet file in LabelSheet. This is the file you will need 
-	* Some versions of zbar give an error related to sockets. If that is the case, uncomment (remove the #) from line 35 of the ErrorDetector Script
 	* If you used the alternative to DYMO stickers, use the ErrorDetector of that folder and place your Labels.txt 
 * Once the Error detector has finished, it will print a list of missing pictures according to your original file. This can happen if, for instance, one photographed the back and front of a dish with the same sticker or one forgot some samples. 
 
