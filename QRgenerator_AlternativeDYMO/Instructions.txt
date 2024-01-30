@@ -1,0 +1,22 @@
+##########################################
+#
+#
+#               INSTRUCTIONS 			#
+#
+#
+###########################################
+
+Requirements
+#Install qrencode and imagemagick
+#sudo apt-get install qrencode
+#sudo apt install imagemagick
+
+- Make a Label file called Labels.txt. Format DATE_ISOLATE_TREATMENT_BREPLICATE_TREPLICATE_SIDE
+- Make a folder called QRcodes
+- Run the script QRencode.sh
+- Print QRs with the windows tool (select images, right click, print, page of 35 images,  NOT fiting page). 
+- Cut the QRs to be used in the sampling. The line is designed as 2cm but when printing it shrinks to 1cm. 
+- Do the collection and the pictures. 
+- Rename files using the code QRdecoder.sh . You need a folder called RawImages and one called Renamed. Run the code from the RawImages folder
+
+WARNING: For another project, make sure that the label list doesn't have '$'\r'' for line jump. Error from the change of line. Solved in the QRdecoder script
