@@ -1,5 +1,6 @@
 # PetriDish_QRdecoder
-QR pipeline to generate QR codes to label petri dishes and automatically rename the pictures taken afterwards
+QR pipeline to generate QR codes to label petri dishes and automatically rename the pictures taken afterwards. 
+Pilar Vesga 2024
 
 ## Requirements
 Have the Windows WSL of ubuntu active in your computer
